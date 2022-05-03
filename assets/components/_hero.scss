@@ -1,0 +1,91 @@
+.hero {
+    margin: 0 auto;
+    padding: 70px 0 74px 0;
+    background: #FBFBFB;
+    max-width: 1152px;
+    max-height: 467px;
+
+    &__content {
+        @include flex(space-between, center);
+    }
+
+    &__title {
+        @include font(700, 70px, #352525);
+    }
+
+    &__info {
+        @include font(400, 30px, #4A5568);
+        margin-top: 19px;
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .hero {
+        &__title {
+            font-size: 50px;
+            line-height: 3px;
+        }
+    }
+}
+
+@media screen and (max-width: 811px) {
+    .hero {
+        &__title {
+            @include font(700, 40px, #352525);
+            line-height: 3px;
+        }
+
+        &__info {
+            @include font(400, 20px, #4A5568);
+        }
+
+        &__coffee {
+            width: 70px;
+        }
+    }
+}
+
+@media screen and (max-width: 752px) {
+    .hero {
+
+        &__content {
+            display: block;
+            text-align: center;
+
+        }
+
+        &__title {
+            position: relative;
+            line-height: 1;
+            display: inline;
+        }
+
+        &__right {
+            margin-top: 40px;
+        }
+
+        &__coffee {
+            width: 70px;
+            position: absolute;
+            right: 0;
+            top: 50px;
+        }
+
+        &__info {
+            margin-top: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .hero {
+        &__coffee {
+            top: 30px;
+            right: -60px;
+        }
+    }
+}

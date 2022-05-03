@@ -1,0 +1,101 @@
+.header {
+    padding: 36px 0 25px 0;
+
+    &__content {
+        @include flex(space-between, center);
+    }
+
+    &__list {
+        @include flex(center, center);
+    }
+
+    &__link {
+        @include font(400, 16px, #000000);
+    }
+
+    &__item {
+        margin-left: 30px;
+    }
+
+    &__input {
+        border: none;
+        margin-left: 12px;
+    }
+
+    &__label {
+        @include flex(center, center);
+    }
+
+}
+
+.burger {
+    position: relative;
+    cursor: pointer;
+    display: none;
+
+    &__list {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: #ffffff;
+        z-index: 1;
+        height: 100ex;
+    }
+
+    &__close {
+        display: none;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 0.5;
+    }
+
+    &__menu {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        &.active .burger__line {
+            display: none;
+        }
+
+        &.active .burger__close {
+            display: block;
+        }
+
+        &.active~.burger__list {
+            display: block;
+        }
+    }
+
+    &__line {
+        background: #000;
+        width: 30px;
+        height: 4px;
+        margin: 0 auto;
+    }
+
+    .header__item {
+        margin-top: 15px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 677px) {
+    .header {
+        &__list {
+            display: none;
+        }
+
+        &__label {
+            display: none;
+        }
+    }
+
+    .burger {
+        display: block;
+    }
+}
