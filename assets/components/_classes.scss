@@ -8,16 +8,23 @@
     @include flex(space-between, center);
 
     &--date {
-        font-weight: 400;
-        font-size: 12px;
-        color: #718096;
+        @include font(400, 12px, #718096);
     }
 
     &--link {
-        font-weight: 700;
-        font-size: 12px;
-        color: #2D3748;
+        @include font(700, 12px, #2D3748);
         text-decoration: none;
     }
 }
 
+@media screen and (max-width: 752px) {
+    .details {
+        &--date {
+            @include font(300, 9px, #718096);
+        }
+
+        &--link {
+            @include font(600, 9px, #2D3748);
+        }
+    }
+}
